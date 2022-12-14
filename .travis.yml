@@ -15,7 +15,7 @@ after_success:
   - docker build -t sagukwon/docker-frontend ./frontend
   - docker build -t sagukwon/docker-backend ./backend
   - docker build -t sagukwon/docker-nginx ./nginx
-
+# 레파지토리 > Settings > Environment Variables 에 도커허브id와 비번 저장
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
   - docker push sagukwon/docker-frontend
