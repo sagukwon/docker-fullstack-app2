@@ -17,7 +17,7 @@ after_success:
   - docker build -t sagukwon/docker-nginx ./nginx
 # 레파지토리 > Settings > Environment Variables 에 도커허브id와 비번 저장
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
-
+# travis ci 연동되려면 Plan 선택하고 결제해야 서비스 가능
   - docker push sagukwon/docker-frontend
   - docker push sagukwon/docker-backend
   - docker push sagukwon/docker-nginx
